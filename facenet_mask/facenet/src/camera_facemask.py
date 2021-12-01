@@ -64,17 +64,13 @@ def main(args):
                 cv2.putText(frame,detect_name,
                             (10, 90), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
                 cv2.imshow('cap', frame)
-                # if detect_name != 'unknown':
-                #     pygame.mixer.init()
-                #     if detect_name == 'sakanaka':
-                #         pygame.mixer.music.load("/Users/sen/Documents/research/facenet_mask/facenet/data/sound/zako.mp3")
-                #     else:
-                #         pygame.mixer.music.load("/Users/sen/Documents/research/facenet_mask/facenet/data/sound/quiz.mp3")
-                #     pygame.mixer.music.play(1)
-                
-                    
-                #     time.sleep(5)
-                #     pygame.mixer.music.stop()
+                if detect_name != 'unknown':
+                    pygame.mixer.init()
+                    pygame.mixer.music.load("./facenet/src/sound/test.mp3")
+                    pygame.mixer.music.play(1)
+                                    
+                    time.sleep(5)
+                    pygame.mixer.music.stop()
                     
                 if cv2.waitKey(1) == ord('q'):
                     break
