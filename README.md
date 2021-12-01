@@ -9,3 +9,5 @@ bash create.sh
 yurihs_demo/facenet_mask
 
 bash camera.shp
+
+※facenet_mask/requirements.txt
