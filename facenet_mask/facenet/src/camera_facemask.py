@@ -49,28 +49,29 @@ def main(args):
                 ret, frame = cap.read()
                 try:
                     cv2.imshow('cap',frame)
-                    images = load_and_align_data(frame, args.image_size, args.margin,model)
+                    images_list,box_list = load_and_align_data(frame, args.image_size, args.margin,model)
                 except:
                     continue
                 # Run forward pass to calculate embeddings
-                feed_dict = { images_placeholder: images, phase_train_placeholder:False }
-                emb = sess.run(embeddings, feed_dict=feed_dict)
-                
-                detect_name = detect_f(emb)
+                for num,images in enumerate(images_list):
+                    feed_dict = { images_placeholder: images, phase_train_placeholder:False }
+                    emb = sess.run(embeddings, feed_dict=feed_dict)
 
-                fps = cv2.getTickFrequency() / (cv2.getTickCount() - tick)
+                    detect_name = detect_f(emb)
+
+                    fps = cv2.getTickFrequency() / (cv2.getTickCount() - tick)
+                    cv2.putText(frame,detect_name,
+                                (int(box_list[num][0]), int(box_list[num][1])-30), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
                 cv2.putText(frame, "FPS:{} ".format(int(fps)),
-                            (10, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
-                cv2.putText(frame,detect_name,
-                            (10, 90), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
+                            (10, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)                   
                 cv2.imshow('cap', frame)
-                if detect_name != 'unknown':
-                    pygame.mixer.init()
-                    pygame.mixer.music.load("./facenet/src/sound/test.mp3")
-                    pygame.mixer.music.play(1)
+                # if detect_name != 'unknown':
+                #     pygame.mixer.init()
+                #     pygame.mixer.music.load("./facenet/src/sound/test.mp3")
+                #     pygame.mixer.music.play(1)
                                     
-                    time.sleep(5)
-                    pygame.mixer.music.stop()
+                #     time.sleep(5)
+                #     pygame.mixer.music.stop()
                     
                 if cv2.waitKey(1) == ord('q'):
                     break
@@ -86,7 +87,8 @@ def detect_f(emb):
         name = row[0]
         data = np.array(eval(row[1]))
         dis = np.sqrt(np.sum(np.square(np.subtract(data,emb[0,:]))))
-        if dis < 0.7:
+        if dis < 0.65:
+            print(dis)
             cur.close()
             conn.close()
             return name
@@ -99,19 +101,23 @@ def load_and_align_data(frame, image_size, margin, model):
     img_list = []
     img = frame
     img_size = np.asarray(img.shape)[0:2]
-    det = detect_mask.mask_image(img, model)
-    print(det)
-    bb = np.zeros(4, dtype=np.int32)
-    bb[0] = np.maximum(det[0]-margin/2, 0)
-    bb[1] = np.maximum(det[1]-margin/2, 0)
-    bb[2] = np.minimum(det[2]+margin/2, img_size[1])
-    bb[3] = np.minimum(det[3]+margin/2, img_size[0])
-    cropped = img[bb[1]:bb[3],bb[0]:bb[2],:]
-    aligned = misc.imresize(cropped, (image_size, image_size), interp='bilinear')
-    prewhitened = facenet.prewhiten(aligned)
-    img_list.append(prewhitened)
-    images = np.stack(img_list)
-    return images
+    box_list = detect_mask.mask_image(img, model)
+    images_list = []
+    for det in box_list:
+        bb = np.zeros(4, dtype=np.int32)
+        bb[0] = np.maximum(det[0]-margin/2, 0)
+        bb[1] = np.maximum(det[1]-margin/2, 0)
+        bb[2] = np.minimum(det[2]+margin/2, img_size[1])
+        bb[3] = np.minimum(det[3]+margin/2, img_size[0])
+        cropped = img[bb[1]:bb[3],bb[0]:bb[2],:]
+        aligned = misc.imresize(cropped, (image_size, image_size), interp='bilinear')
+        prewhitened = facenet.prewhiten(aligned)
+        img_list.append(prewhitened)
+        images = np.stack(img_list)
+        images_list.append(images)
+        img_list.clear()
+        
+    return images_list,box_list
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
