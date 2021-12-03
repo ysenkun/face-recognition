@@ -1,7 +1,7 @@
 import cv2
 import time 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 cascade_file = "haarcascade_frontalface_default.xml"
 cascade = cv2.CascadeClassifier(cascade_file)
@@ -24,28 +24,19 @@ n = 1
 while True:
 
     ret, frame = cap.read()
-    #===========================================
 
+    cv2.rectangle(frame,(400,100),(1000,600),(0, 255, 0),thickness=3)
     
     cv2.imshow('cap', frame)
 
     key = cv2.waitKey(33)
-
-
-    # if i % 20 ==0 and i>60:
-    #if cv2.waitKey(delay) & 0xFF == ord('c'):
     if key == ord('a'):
         num = format(n,'03')
-        #cv2.imwrite('./facenet_mask/facenet/src/data/images/{}.{}.jpg'.format(user_name,num), face_cut)
         cv2.imwrite('./src/data/images/{}{}.jpg'.format(user_name,num), frame)
         n += 1
         i += 1
     i += 1
 
-    #===========================================
-    #cv2.imshow('frame', frame)
-    # if i == finish_num:
-    #     break  
     if key == 27 or  n == finish_num + 1:
         break
 

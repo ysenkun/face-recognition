@@ -26,7 +26,7 @@ minsize = 20 # minimum size of face
 threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
 factor = 0.709 # scale factor
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 WIDTH = 800
 HEIGHT = 600
 FPS = 24
@@ -73,9 +73,10 @@ def main(args):
                     feed_dict = { images_placeholder: images, phase_train_placeholder:False }
                     emb = sess.run(embeddings, feed_dict=feed_dict)
                     detect_name = detect_f(emb)
+                    # cv2.FONT_HERSHEY_PLAIN
 
                     cv2.putText(frame,detect_name,
-                                (int(box_list[num][0]+30), int(box_list[num][1])-30), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 5, cv2.LINE_AA)
+                                (int(box_list[num][0]+30), int(box_list[num][1])-30),cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
 
                 # fps = cv2.getTickFrequency() / (cv2.getTickCount() - tick)

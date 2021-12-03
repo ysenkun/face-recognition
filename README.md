@@ -3,7 +3,7 @@
 #1: create DB(register) 
 yurihs_demo/facenet_mask/facenet
 
-bash create.sh
+bash create.sh   ※key(A)でカメラのシャッターを切る
 
 #2: detect 
 yurihs_demo/facenet_mask
