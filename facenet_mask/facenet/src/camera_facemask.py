@@ -34,7 +34,7 @@ cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
 cap.set(cv2.CAP_PROP_FPS, FPS)
 
-dbname = '/Users/sen/Documents/yurihs_demo/facenet_mask/facenet/register.db'
+dbname = 'facenet/register.db'
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 
@@ -56,7 +56,7 @@ def main(args):
             phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
 
             #mask detect用のmodel
-            model = load_model("/Users/sen/Documents/yurihs_demo/facenet_mask/facenet/src/mask_detect/mask_detector.model")
+            model = load_model("facenet/src/mask_detect/mask_detector.model")
             while True:
                 tick = cv2.getTickCount()
                 ret, frame = cap.read()

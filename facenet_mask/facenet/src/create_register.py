@@ -17,10 +17,11 @@ import align.detect_face
 import csv
 import cv2
 import sqlite3
-sys.path.append('/Users/sen/Documents/research/facenet_mask/mask_detect')
-import detect_mask
+from mask_detect import detect_mask_db
 
-model = load_model("/Users/sen/Documents/research/facenet_mask/mask_detect/mask_detector.model")
+
+
+model = load_model("src/mask_detect/mask_detector.model")
 
 def main(args):
     
@@ -97,18 +98,10 @@ def load_and_align_data(image_paths, image_size, margin, gpu_memory_fraction):
     img_list = []
     
     for k, image in enumerate(tmp_image_paths):
-        # img = misc.imread(os.path.expanduser(image), mode='RGB')
-        # img_size = np.asarray(img.shape)[0:2]
         img = cv2.imread(image)
         img_size = np.asarray(img.shape)[0:2]
-        # bounding_boxes, _ = align.detect_face.detect_face(img, minsize, pnet, rnet, onet, threshold, factor)
-        # if len(bounding_boxes) < 1:
-        #   image_paths.remove(image)
-        #   print("can't detect face, remove ", image)
-        #   continue
-        # det = np.squeeze(bounding_boxes[0,0:4])
         try:
-            det = detect_mask.mask_image(img,model)
+            det = detect_mask_db.mask_image(img,model)
             bb = np.zeros(4, dtype=np.int32)
             bb[0] = np.maximum(det[0]-margin/2, 0)
             bb[1] = np.maximum(det[1]-margin/2, 0)
