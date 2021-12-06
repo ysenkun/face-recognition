@@ -26,20 +26,13 @@ minsize = 20 # minimum size of face
 threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
 factor = 0.709 # scale factor
 
-cap = cv2.VideoCapture(0)
-WIDTH = 800
-HEIGHT = 600
-FPS = 24
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
-cap.set(cv2.CAP_PROP_FPS, FPS)
+cap = cv2.VideoCapture(1)
 
 dbname = 'facenet/register.db'
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 
 select_sql = 'SELECT * FROM persons'
-
 
 def main(args):
     with tf.Graph().as_default():
@@ -83,8 +76,11 @@ def main(args):
                 # cv2.putText(frame, "FPS:{} ".format(int(fps)),
                 #            (10, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
 
-                cv2.imshow('cap', frame)
-                    
+                #全画面表示設定
+                # cv2.namedWindow('cap', cv2.WINDOW_NORMAL)
+                # cv2.setWindowProperty('cap', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+                cv2.imshow('cap',frame)
                 if cv2.waitKey(1) == ord('q'):
                     break
 
