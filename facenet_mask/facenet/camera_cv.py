@@ -1,7 +1,7 @@
 import cv2
 import time 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 cascade_file = "haarcascade_frontalface_default.xml"
 cascade = cv2.CascadeClassifier(cascade_file)

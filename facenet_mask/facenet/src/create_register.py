@@ -19,8 +19,6 @@ import cv2
 import sqlite3
 from mask_detect import detect_mask_db
 
-
-
 model = load_model("src/mask_detect/mask_detector.model")
 
 def main(args):
@@ -47,6 +45,7 @@ def main(args):
             nrof_images = len(args.image_files)
             for i in range(nrof_images):
                 name = args.image_files[i].split('/')[-1].split('00')[0]
+                print(name)
                 data = list(emb[i,:])
                 create_db(name,data)
 

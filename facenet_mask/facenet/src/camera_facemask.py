@@ -26,7 +26,7 @@ minsize = 20 # minimum size of face
 threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
 factor = 0.709 # scale factor
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 dbname = 'facenet/register.db'
 conn = sqlite3.connect(dbname)
@@ -51,7 +51,7 @@ def main(args):
             #mask detect用のmodel
             model = load_model("facenet/src/mask_detect/mask_detector.model")
             while True:
-                tick = cv2.getTickCount()
+                # tick = cv2.getTickCount()
                 ret, frame = cap.read()
                 try:
                     #cv2.imshow('cap',frame)
