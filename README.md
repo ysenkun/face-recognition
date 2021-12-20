@@ -11,7 +11,7 @@ The Python environment is Python==3.7.0.
 cd facenet_mask
 pip install -r requirements.txt
 ```
-### Pre-trained models
+### Pre-trained models(FaceNet)
 | Model name      | LFW accuracy | Training dataset | Architecture |
 |-----------------|--------------|------------------|-------------|
 | [20180408-102900](https://drive.google.com/open?id=1R77HmFADxe87GmoLwzfgMu_HY0IhcyBz) | 0.9905        | CASIA-WebFace    | [Inception ResNet v1](https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py) |
@@ -21,7 +21,15 @@ pip install -r requirements.txt
 * Where to save the model:
 ```bash
 cd facenet_mask
+```
+```bash
 mkdir facenet_model
+```
+
+### Pre-trained models(For face detection)
+[mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
+```bash
+cd facenet_mask/facenet/src/mask_detect
 ```
 
 ## Run
