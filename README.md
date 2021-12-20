@@ -27,6 +27,7 @@ mkdir facenet_model
 ## Run
 
 ### Create DB(register)
+To face recognition, register the face with the following command.When the following command is executed, the number of registered faces and their names will be entered and the image will be taken.
 ```bash
 cd yurihs_demo/facenet_mask/facenet
 ```
@@ -37,6 +38,7 @@ bash create.sh
 ```
 
 ### Face Recognition
+It compares the face image with the one registered earlier and face recognition.
 ```bash
 cd yurihs_demo/facenet_mask`
 ```
