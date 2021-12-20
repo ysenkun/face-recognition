@@ -20,8 +20,11 @@ cd yurihs_demo/facenet_mask/facenet
 bash create.sh
 ```
 
-### Detect
-`cd yurihs_demo/facenet_mask`
+### Face Recognition
+```bash
+cd yurihs_demo/facenet_mask`
+```
+
 ```bash
 bash camera.shp
 ```
