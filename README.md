@@ -41,8 +41,7 @@ To face recognition, register the face with the following command.When the follo
 ```bash
 cd yurihs_demo/facenet_mask/facenet
 ```
-
-※key(A)でカメラのシャッターを切る
+※A on the keyboard to release the shutter (camera)
 ```bash
 bash create.sh
 ```
