@@ -1,4 +1,4 @@
-facenet_mask/facenet_model
+facenet_mask/facenet_model/*
 
 facenet_mask/facenet/src/mask_detect/mask_detector.model
 
