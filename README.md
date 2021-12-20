@@ -9,6 +9,8 @@ This repository is a minimal system that uses FaceNet for face recognition.
 The Python environment is Python==3.7.0.
 ```bash
 cd facenet_mask
+```
+```bash
 pip install -r requirements.txt
 ```
 ### Pre-trained models(FaceNet)
@@ -52,5 +54,5 @@ cd yurihs_demo/facenet_mask`
 ```
 
 ```bash
-bash camera.shp
+bash camera.sh
 ```
