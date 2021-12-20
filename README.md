@@ -1,13 +1,24 @@
 # yurihs_demo
 
-#1: create DB(register) 
-yurihs_demo/facenet_mask/facenet
+## Introduction
 
-bash create.sh   ※key(A)でカメラのシャッターを切る
+## Before you run the tracker
 
-#2: detect 
-yurihs_demo/facenet_mask
+`cd facenet_mask`
+`pip install -r requirements.txt`
 
+## Run
+
+### Create DB(register)
+`cd yurihs_demo/facenet_mask/facenet`
+
+※key(A)でカメラのシャッターを切る
+```bash
+bash create.sh
+```
+
+### Detect
+`cd yurihs_demo/facenet_mask`
+```bash
 bash camera.shp
-
-※facenet_mask/requirements.txt
+```
