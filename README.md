@@ -15,7 +15,7 @@ $ conda activate facenet
 $ git clone https://github.com/ysenkun/yurihs_demo.git
 ```
 ```bash
-cd facenet_mask
+$ cd facenet_mask
 ```
 ```bash
 $ pip3 install -r requirements.txt
@@ -37,6 +37,7 @@ $ mkdir facenet_model
 
 ### Pre-trained models(For face detection)
 [mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
+After downloading the model, save it in the following directory
 ```bash
 $ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ```
