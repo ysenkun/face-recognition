@@ -8,10 +8,16 @@ This repository is a face recognition system based on FaceNet.
 ## Before you run the tracker
 The Python environment is Python==3.7.0.
 ```bash
+$ conda create -n facenet python==3.7
+$ conda activate facenet
+```
+```bah
+$ git clone https://github.com/ysenkun/yurihs_demo.git
+```bash
 cd facenet_mask
 ```
 ```bash
-pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 ### Pre-trained models(FaceNet)
 | Model name      | LFW accuracy | Training dataset | Architecture |
@@ -22,16 +28,16 @@ pip install -r requirements.txt
 * NOTE: If you use any of the models, please do not forget to give proper credit to those providing the training dataset as well.
 * Where to save the model:
 ```bash
-cd facenet_mask
+$ cd facenet_mask
 ```
 ```bash
-mkdir facenet_model
+$ mkdir facenet_model
 ```
 
 ### Pre-trained models(For face detection)
 [mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
 ```bash
-mv mask_detector.model facenet_mask/facenet/src/mask_detect
+$ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ```
 ### :raising_hand: Cited by:
 1. https://github.com/chandrikadeb7/Face-Mask-Detection
@@ -42,19 +48,19 @@ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ### Create DB(register)
 To face recognition, register the face with the following command.When the following command is executed, the number of registered faces and their names will be entered and the image will be taken.
 ```bash
-cd yurihs_demo/facenet_mask/facenet
+$ cd yurihs_demo/facenet_mask/facenet
 ```
 ※A on the keyboard to release the shutter (camera)
 ```bash
-bash create.sh
+$ bash create.sh
 ```
 
 ### Face Recognition
 It compares the face image with the one registered earlier and face recognition.
 ```bash
-cd yurihs_demo/facenet_mask
+$ cd yurihs_demo/facenet_mask
 ```
 
 ```bash
-bash camera.sh
+$ bash camera.sh
 ```
