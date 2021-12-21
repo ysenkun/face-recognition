@@ -11,8 +11,9 @@ The Python environment is Python==3.7.0.
 $ conda create -n facenet python==3.7
 $ conda activate facenet
 ```
-```bah
+```bash
 $ git clone https://github.com/ysenkun/yurihs_demo.git
+```
 ```bash
 cd facenet_mask
 ```
