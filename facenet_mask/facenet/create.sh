@@ -15,7 +15,7 @@ files="./src/data/images/*"
 
 rm register.db
 
-# conda activate mask
-/opt/anaconda3/envs/mask/bin/python3 src/create_register.py ${model} ${files} --image_size 160 --margin 32 --gpu_memory_fraction 0
+# conda activate facenet
+/opt/anaconda3/envs/facenet/bin/python3 src/create_register.py ${model} ${files} --image_size 160 --margin 32 --gpu_memory_fraction 0
 
 rm ./src/data/images/*

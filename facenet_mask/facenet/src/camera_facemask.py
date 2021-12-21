@@ -17,10 +17,6 @@ import cv2
 from mask_detect import detect_mask
 import asyncio
 
-# minsize = 20 # minimum size of face
-# threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
-# factor = 0.709 # scale factor
-
 cap = cv2.VideoCapture(1)
 
 dbname = 'facenet/register.db'
