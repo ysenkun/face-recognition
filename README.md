@@ -1,4 +1,4 @@
-# yurihs_demo
+# Face Recognition
 
 ## Introduction
 This repository is a face recognition system based on FaceNet.
