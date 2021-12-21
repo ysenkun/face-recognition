@@ -1,7 +1,7 @@
 # yurihs_demo
 
 ## Introduction
-This repository is a minimal system that uses FaceNet for face recognition.
+This repository is a face recognition system based on FaceNet.
 ### :raising_hand: Cited by:
 1. https://github.com/davidsandberg/facenet
 
@@ -49,7 +49,7 @@ bash create.sh
 ### Face Recognition
 It compares the face image with the one registered earlier and face recognition.
 ```bash
-cd yurihs_demo/facenet_mask`
+cd yurihs_demo/facenet_mask
 ```
 
 ```bash
