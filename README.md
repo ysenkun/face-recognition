@@ -31,8 +31,11 @@ mkdir facenet_model
 ### Pre-trained models(For face detection)
 [mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
 ```bash
-cd facenet_mask/facenet/src/mask_detect
+mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ```
+### :raising_hand: Cited by:
+1. https://github.com/chandrikadeb7/Face-Mask-Detection
+
 
 ## Run
 
