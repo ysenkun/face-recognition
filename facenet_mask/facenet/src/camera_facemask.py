@@ -14,19 +14,14 @@ import argparse
 import facenet
 import sqlite3
 import cv2
-import pprint
 from mask_detect import detect_mask
-#import pygame.mixer
-import time
-import datetime
-import calendar
 import asyncio
 
-minsize = 20 # minimum size of face
-threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
-factor = 0.709 # scale factor
+# minsize = 20 # minimum size of face
+# threshold = [ 0.6, 0.7, 0.7 ]  # three steps's threshold
+# factor = 0.709 # scale factor
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 dbname = 'facenet/register.db'
 conn = sqlite3.connect(dbname)
@@ -40,7 +35,7 @@ def main(args):
         sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
         with tf.Session() as sess:
 
-            # Load the model
+            # Load the model for FaceNet
             facenet.load_model(args.model)
 
             # Get input and output tensors
@@ -48,13 +43,12 @@ def main(args):
             embeddings = tf.get_default_graph().get_tensor_by_name("embeddings:0")
             phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
 
-            #mask detect用のmodel
+            # Load the model for mask detect
             model = load_model("facenet/src/mask_detect/mask_detector.model")
             while True:
                 # tick = cv2.getTickCount()
                 ret, frame = cap.read()
                 try:
-                    #cv2.imshow('cap',frame)
                     images_list,box_list = load_and_align_data(frame, args.image_size, args.margin,model)
 
                 except:
@@ -71,14 +65,10 @@ def main(args):
                     cv2.putText(frame,detect_name,
                                 (int(box_list[num][0]+30), int(box_list[num][1])-30),cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
-
+                # Show fps
                 # fps = cv2.getTickFrequency() / (cv2.getTickCount() - tick)
                 # cv2.putText(frame, "FPS:{} ".format(int(fps)),
                 #            (10, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 2, cv2.LINE_AA)
-
-                #全画面表示設定
-                # cv2.namedWindow('cap', cv2.WINDOW_NORMAL)
-                # cv2.setWindowProperty('cap', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
                 cv2.imshow('cap',frame)
                 if cv2.waitKey(1) == ord('q'):
