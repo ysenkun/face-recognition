@@ -5,7 +5,7 @@ This repository is a face recognition system based on FaceNet.
 ### :raising_hand: Cited by:
 1. https://github.com/davidsandberg/facenet
 
-## Before you run the tracker
+## Environment setup
 The Python environment is Python==3.7.0.
 ```bash
 $ conda create -n facenet python==3.7
