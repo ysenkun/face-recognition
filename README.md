@@ -6,9 +6,9 @@ This repository is a face recognition system based on FaceNet.
 1. https://github.com/davidsandberg/facenet
 
 ## Environment setup
-The Python environment is Python==3.7.0.
+The Python environment is Python==3.7.0
 ```bash
-$ conda create -n facenet python==3.7
+$ conda create -n facenet python==3.7.0
 $ conda activate facenet
 ```
 ```bash
