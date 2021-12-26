@@ -8,7 +8,7 @@ ARR=`seq -s ' ' $num `
 for i in $ARR
 do
 	echo $i'人目'
-	python3 camera.py
+	/opt/anaconda3/envs/facenet/bin/python3 camera.py
 done
 
 files="./src/data/images/*"
