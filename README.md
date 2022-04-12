@@ -50,7 +50,7 @@ $ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ### Create DB(register)
 To face recognition, register your face with the following command.When the following command is executed, the number of registered faces and their names will be entered and the image will be taken.
 ```bash
-$ cd yurihs_demo/facenet_mask/facenet
+$ cd facenet_mask/facenet
 ```
 ※A on the keyboard to release the shutter (camera)
 ```bash
@@ -60,7 +60,7 @@ $ bash create.sh
 ### Face Recognition
 It compares the face image with the one registered earlier and face recognition.
 ```bash
-$ cd yurihs_demo/facenet_mask
+$ cd facenet_mask
 ```
 
 ```bash
