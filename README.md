@@ -12,7 +12,7 @@ $ conda create -n facenet python==3.7.0
 $ conda activate facenet
 ```
 ```bash
-$ git clone https://github.com/ysenkun/Face_Recognition.git
+$ git clone https://github.com/ysenkun/face_recognition.git
 ```
 ```bash
 $ cd facenet_mask
