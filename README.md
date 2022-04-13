@@ -20,6 +20,9 @@ $ cd facenet_mask
 ```bash
 $ pip3 install -r requirements.txt
 ```
+```bash
+$ pip3 install numpy==1.16.1
+```
 ### Pre-trained models(FaceNet)
 | Model name      | LFW accuracy | Training dataset | Architecture |
 |-----------------|--------------|------------------|-------------|
@@ -33,6 +36,13 @@ $ cd facenet_mask
 ```
 ```bash
 $ mkdir facenet_model
+```
+Download the vggface2 model and rename the folder to vggface2
+```bash
+$ mv ~/Downloads/20180402-114759 vggface2
+```
+```bash
+$ mv vggface2 facenet_model/
 ```
 
 ### Pre-trained models(For face detection)
