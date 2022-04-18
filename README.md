@@ -1,11 +1,11 @@
-# Face Recognition
+# Face Recognition with FaceNet
 
 ## Introduction
 This repository is a face recognition system based on FaceNet.
-### :raising_hand: Cited by:
+### :raising_hand: Reference:
 1. https://github.com/davidsandberg/facenet
 
-## Environment setup
+## Environment Setup
 The Python environment is Python==3.7.0
 ```bash
 $ conda create -n facenet python==3.7.0
@@ -23,7 +23,7 @@ $ pip3 install -r requirements.txt
 ```bash
 $ pip3 install numpy==1.16.1
 ```
-### Pre-trained models(FaceNet)
+### Pre-trained Models(FaceNet)
 | Model name      | LFW accuracy | Training dataset | Architecture |
 |-----------------|--------------|------------------|-------------|
 | [20180408-102900](https://drive.google.com/open?id=1R77HmFADxe87GmoLwzfgMu_HY0IhcyBz) | 0.9905        | CASIA-WebFace    | [Inception ResNet v1](https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py) |
@@ -45,16 +45,16 @@ $ mv ~/Downloads/20180402-114759 vggface2
 $ mv vggface2 facenet_model/
 ```
 
-### Pre-trained models(For face detection)
+### Pre-trained Models (For face detection)
 [mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
 After downloading the model, save it in the following directory
 ```bash
 $ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ```
-### :raising_hand: Cited by:
+### :raising_hand: Reference:
 1. https://github.com/chandrikadeb7/Face-Mask-Detection
 
-## Shell script modify
+## Modifying Shell Script
 Fill out the python virtual environment in the following shell script.  
 e.g. {YOUR_APPROPRIATE_PATH}/facenet/bin/python
 * facenet_mask/camera.sh
@@ -62,7 +62,7 @@ e.g. {YOUR_APPROPRIATE_PATH}/facenet/bin/python
 
 ## Run
 
-### Create DB(register)
+### Creating DB (register)
 To face recognition, register your face with the following command.When the following command is executed, the number of registered faces and their names will be entered and the image will be taken.
 ```bash
 $ cd facenet_mask/facenet
