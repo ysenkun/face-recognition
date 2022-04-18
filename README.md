@@ -54,6 +54,11 @@ $ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ### :raising_hand: Cited by:
 1. https://github.com/chandrikadeb7/Face-Mask-Detection
 
+## Shell script modify
+Fill out the python virtual environment in the following shell script.
+e.g. {YOUR_APPROPRIATE_PATH}/facenet/bin/python
+* facenet_mask/camera.sh
+* face_recognition/facenet_mask/facenet/create.sh
 
 ## Run
 
