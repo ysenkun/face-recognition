@@ -4,6 +4,7 @@ import time
 cap = cv2.VideoCapture(1)
 
 user_name = input("\n Input your name \n")
+input("Press CMD + A ")
 finish_num = 1
 
 i = 0
@@ -17,6 +18,7 @@ while True:
     cv2.imshow('cap', frame)
 
     key = cv2.waitKey(33)
+    
     if key == ord('a'):
         num = format(n,'03')
         cv2.imwrite('./src/data/images/{}{}.jpg'.format(user_name,num), frame)
