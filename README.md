@@ -5,7 +5,7 @@ This repository is a face recognition system based on FaceNet.
 ### :raising_hand: Reference:
 1. https://github.com/davidsandberg/facenet
 
-## Environment Setup
+## Seting Up Environment
 The Python environment is Python==3.7.0
 ```bash
 $ conda create -n facenet python==3.7.0
@@ -29,7 +29,7 @@ $ pip3 install numpy==1.16.1
 | [20180408-102900](https://drive.google.com/open?id=1R77HmFADxe87GmoLwzfgMu_HY0IhcyBz) | 0.9905        | CASIA-WebFace    | [Inception ResNet v1](https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py) |
 | [20180402-114759](https://drive.google.com/open?id=1EXPBSXwTaqrSC0OhUdXNmKSh9qJUQ55-) | 0.9965        | VGGFace2      | [Inception ResNet v1](https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py) |
 
-* NOTE: If you use any of the models, please do not forget to give proper credit to those providing the training dataset as well.
+* NOTE: If you use any of the models, please do not forget to give proper credits to those providing the training datasets as well.
 * Where to save the model:
 ```bash
 $ cd facenet_mask
@@ -46,8 +46,7 @@ $ mv vggface2 facenet_model/
 ```
 
 ### Pre-trained Models (For face detection)
-[mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing)
-After downloading the model, save it in the following directory
+After downloading [mask_detector.model](https://drive.google.com/file/d/1DdaF3eRnlbv2ssvsJhHqlGQTnlhqK2wi/view?usp=sharing), save it in the following directory
 ```bash
 $ mv mask_detector.model facenet_mask/facenet/src/mask_detect
 ```
