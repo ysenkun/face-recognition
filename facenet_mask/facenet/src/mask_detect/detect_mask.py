@@ -9,8 +9,8 @@ import os
 import time
 
 def mask_image(img,model):
-    prototxtPath = "/Users/sen/Documents/research/facenet_mask/mask_detect/face_detector/deploy.prototxt"
-    weightsPath = "/Users/sen/Documents/research/facenet_mask/mask_detect/face_detector/res10_300x300_ssd_iter_140000.caffemodel"
+    prototxtPath = "facenet/src/mask_detect/face_detector/deploy.prototxt"
+    weightsPath = "facenet/src/mask_detect/face_detector/res10_300x300_ssd_iter_140000.caffemodel"
     net = cv2.dnn.readNet(prototxtPath, weightsPath)
     
     image = img
