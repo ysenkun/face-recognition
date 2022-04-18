@@ -32,6 +32,6 @@ while True:
     if key == 27 or  n == finish_num + 1:
         break
 
-print("撮影が完了しました")
+print("Finish")
 cap.release()
 cv2.destroyAllWindows()
