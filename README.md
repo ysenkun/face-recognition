@@ -59,18 +59,21 @@ You need to modify 1 location in facenet_mask/camera.sh, and 2 locations in face
 
 ## Run
 
-### Creating DB (register)
-To face recognition, register your face with the following command.When the following command is executed, the number of registered faces and their names will be entered and the image will be taken.
+### Registering Face Detection Targets
+The _create.sh_ would first prompt the user to define how many faces to be registered. Then it would take a photo for each user. Finally, it would make a database for the detection.
 ```bash
 $ cd facenet_mask/facenet
 ```
-※A on the keyboard to release the shutter (camera)
 ```bash
 $ bash create.sh
 ```
+In order to reset the registered faces, use:
+```bash
+$ rm register.db
+```
 
 ### Face Recognition
-It compares the face image with the one registered earlier and face recognition.
+The following command would perform a face recognition based on the faces registered.
 ```bash
 $ cd facenet_mask
 ```
