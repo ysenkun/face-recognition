@@ -17,7 +17,7 @@ import cv2
 from mask_detect import detect_mask
 import asyncio
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 dbname = 'facenet/register.db'
 conn = sqlite3.connect(dbname)
