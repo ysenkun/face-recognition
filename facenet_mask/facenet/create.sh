@@ -13,7 +13,7 @@ done
 
 files="./src/data/images/*"
 
-#If you want to rest the registered faces database, use the command bellow.
+#If you want to rest the registered faces database, use the command below.
 #rm register.db
 
 # conda activate facenet
