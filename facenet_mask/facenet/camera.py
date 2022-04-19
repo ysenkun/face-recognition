@@ -4,7 +4,7 @@ import time
 cap = cv2.VideoCapture(0)
 
 user_name = input("\n Input your name \n")
-input("Press CMD + A ")
+print("Press A for the photo shoot")
 finish_num = 1
 
 i = 0
