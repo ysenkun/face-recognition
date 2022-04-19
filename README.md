@@ -81,4 +81,4 @@ $ cd facenet_mask
 ```bash
 $ bash camera.sh
 ```
-https://user-images.githubusercontent.com/82140392/163969654-e555e41f-aa25-42d6-9c9e-c1fc5bc79a09.gif
+![sample](https://user-images.githubusercontent.com/82140392/163969654-e555e41f-aa25-42d6-9c9e-c1fc5bc79a09.gif)
