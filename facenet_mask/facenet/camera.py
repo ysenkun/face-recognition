@@ -23,7 +23,6 @@ while True:
         num = format(n,'03')
         cv2.imwrite('./src/data/images/{}{}.jpg'.format(user_name,num), frame)
 
-        #研究用webカメラで顔の登録をする(inputの際には，名前001,名前002などに入力)
         #cv2.imwrite('./src/data/images/{}.jpg'.format(user_name), frame)
         n += 1
         i += 1
