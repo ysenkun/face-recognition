@@ -1,7 +1,8 @@
 # Face Recognition with FaceNet
 
 ## Introduction
-This repository is a face recognition system based on FaceNet.
+This repository is a face recognition system based on FaceNet.  
+NOTE: I've added a new version, please access [this link](https://github.com/ysenkun/face_recognition_v2)
 ### :raising_hand: Reference:
 1. https://github.com/davidsandberg/facenet
 
